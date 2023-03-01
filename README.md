@@ -48,12 +48,12 @@ You can view the live application
 
 ## Authors
 
-### [🎹](https://github.com/t-starkw) Zachary Berkley
-### [📽️](https://github.com/t-starkw) Adrian Carter
-### [🚗](https://github.com/t-starkw) Emre Eyupoglu
-### [🎨](https://github.com/t-starkw) Sean Fitzpatrick
+### [🎹](https://github.com/ZBerkley88) Zachary Berkley
+### [📽️](https://github.com/carter-adrian) Adrian Carter
+### [🚗](https://github.com/emreyupoglu) Emre Eyupoglu
+### [🎨](https://github.com/smfitz) Sean Fitzpatrick
 ### [🍓](https://github.com/t-starkw) Tessa Starkweather
-### [🦄](https://github.com/t-starkw) Kelly Williams 
+### [🦄](https://github.com/kellyfayrishta) Kelly Williams 
 
 
 ## Contributing
