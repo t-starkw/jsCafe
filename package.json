@@ -21,8 +21,7 @@
   },
   "homepage": "https://github.com/t-starkw/jsCafe#readme",
   "dependencies": {
-    "concurrently": "^7.6.0",
-    "react-icons": "^4.7.1"
+    "concurrently": "^7.6.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.2.7"
