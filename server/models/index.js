@@ -1,4 +1,5 @@
-// const User = require('./User');
-// const Menu = require('./Menu');
+const Menu = require('./Menu');
+const Profile = require('./Profile');
+const Merch = require('./Merch');
 
-// module.exports = { User, Menu };
+module.exports = { Menu, Profile, Merch };
