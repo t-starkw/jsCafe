@@ -44,18 +44,18 @@ const resolvers = {
     },
 
     // Add order to order history
-    addToHistory: async (parent, { profileId, order }) => {
-      return Profile.findOneAndUpdate(
-        { _id: profileId },
-        {
-          $addToSet: { order_history: order },
-        },
-        {
-          new: true,
-          runValidators: true,
-        }
-      );
-    },
+    // addToHistory: async (parent, { profileId, order }) => {
+    //   return Profile.findOneAndUpdate(
+    //     { _id: profileId },
+    //     {
+    //       $addToSet: { order_history: order },
+    //     },
+    //     {
+    //       new: true,
+    //       runValidators: true,
+    //     }
+    //   );
+    // },
   },
 };
 
