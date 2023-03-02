@@ -6,7 +6,10 @@ const typeDefs = gql`
     name: String!
     email: String!
     password: String!
+    order_history: [String!]
   }
+
+
 
   type Auth {
     token: ID!
@@ -22,6 +25,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addProfile(name: String!, email: String!, password: String!): Profile
     removeProfile(profileId: ID!): Profile
+    addToHistory(profileId: ID!, order: String!): Profile
   }
 `;
 
