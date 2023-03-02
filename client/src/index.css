@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+}

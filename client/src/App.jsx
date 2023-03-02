@@ -2,6 +2,8 @@ import About from './components/About';
 import Home from './components/Home';
 import Menu from './components/Menu';
 import Navbar from './components/Navbar';
+import { Canvas } from "@react-three/fiber";
+import { Experience } from "./components/Experience";
 import './App.css';
 
 // apollo client configuration
@@ -41,6 +43,9 @@ function App() {
     <ApolloProvider client={client}>
     <div>
       <Navbar />
+      <Canvas>
+        <Experience />
+      </Canvas>
     </div>
     </ApolloProvider>
   );
