@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const menuSchema = new Schema({
   id: {
-    type: number,
+    type: Number,
     required: true,
     unique: true,
     trim: true,
@@ -14,19 +14,18 @@ const menuSchema = new Schema({
     unique: true,
   },
   price: {
-    type: Decimal128,
+    type: Number,
     required: true,
-    validate: {
-      isDecimal: true,
-    },
   },
-  category_id: {
-    type: number,
-    // references: {
-    //   model: 'category',
-    //   key: 'id'
-    // }
-  },
+  // category: {
+  //   type: Number,
+  //   // references: {
+  //   //   model: 'category',
+  //   //   key: 'id'
+  //   // }
+  // },
 });
+
+const Product = model('Product', menuSchema);
 
 module.exports = Product;
