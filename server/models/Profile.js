@@ -24,6 +24,13 @@ const profileSchema = new Schema(
     minlength: 8,
   },
   
+  order_history: [
+    {
+      type: Object,
+      trim: true,
+    },
+  ],
+
   favOrder: [
     {
       type: Object,

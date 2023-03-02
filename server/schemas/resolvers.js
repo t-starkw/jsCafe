@@ -1,35 +1,35 @@
-const { User } = require("../models");
+const { Profile } = require("../models");
 
 const resolvers = {
   Query: {
-    // Query one user
-    user: async (parent, { userId }) => {
-      return User.findOne({ _id: profileId });
+    // Query one profile
+    profile: async (parent, { profileId }) => {
+      return Profile.findOne({ _id: profileId });
     },
 
-    // Query all users
-    users: async () => {
-      return User.find();
+    // Query all profiles
+    profiles: async () => {
+      return Profile.find();
     },
   },
 
   Mutation: {
     // Add a new user profile
-    addUser: async (parent, { name, email, password }) => {
-      const newUser = await Profile.create({ name, email, password });
+    addProfile: async (parent, { name, email, password }) => {
+      const newProfile = await Profile.create({ name, email, password });
 
-      return newUser;
+      return newProfile;
     },
 
     // Log into an existing user profile
     login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+      const profile = await Profile.findOne({ email });
 
-      if (!user) {
-        throw new AuthenticationError("No user with this email found!");
+      if (!profile) {
+        throw new AuthenticationError("No profile with this email found!");
       }
 
-      const correctPw = await user.isCorrectPassword(password);
+      const correctPw = await profile.isCorrectPassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError("Incorrect password!");
@@ -39,14 +39,14 @@ const resolvers = {
     },
 
     // Remove a user profile
-    removeUser: async (parent, { userId }) => {
-      return User.findOneAndDelete({ _id: userId });
+    removeProfile: async (parent, { profileId }) => {
+      return Profile.findOneAndDelete({ _id: profileId });
     },
 
     // Add order to order history
-    addToHistory: async (parent, { userId, order }) => {
-      return User.findOneAndUpdate(
-        { _id: userId },
+    addToHistory: async (parent, { profileId, order }) => {
+      return Profile.findOneAndUpdate(
+        { _id: profileId },
         {
           $addToSet: { order_history: order },
         },
