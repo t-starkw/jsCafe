@@ -1,4 +1,4 @@
-const { Profile } = require("../models");
+const { Profile, Product } = require("../models");
 
 const resolvers = {
   Query: {
@@ -10,6 +10,11 @@ const resolvers = {
     // Query all profiles
     profiles: async () => {
       return Profile.find();
+    },
+
+    // Query all menu items
+    menuItems: async () => {
+      return Product.find();
     },
   },
 
@@ -55,6 +60,12 @@ const resolvers = {
           runValidators: true,
         }
       );
+    },
+
+    addToMenu: async (parent, { product_name, price }) => {
+      const newMenuItem = await Product.create({ product_name, price });
+
+      return newMenuItem;
     },
   },
 };
