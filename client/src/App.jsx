@@ -14,6 +14,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const httpLink = createHttpLink({
   uri: '/jscafe',
@@ -41,12 +42,17 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-    <div>
-      <Navbar />
-      <Canvas>
-        <Experience />
-      </Canvas>
-    </div>
+      <div>
+        <Navbar />
+        {/* <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/about' component={About} />
+          <Route exact path='/menu' component={Menu} />
+        </Switch> */}
+        <Canvas>
+          <Experience />
+        </Canvas>
+      </div>
     </ApolloProvider>
   );
 }
