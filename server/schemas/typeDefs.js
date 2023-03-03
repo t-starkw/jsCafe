@@ -2,14 +2,18 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type Profile {
-    _id: ID
+    _id: ID!
     name: String!
     email: String!
     password: String!
     order_history: [String!]
   }
 
-
+  type Product {
+    _id: ID!
+    product_name: String!
+    price: Int!
+  }
 
   type Auth {
     token: ID!
@@ -19,6 +23,7 @@ const typeDefs = gql`
   type Query {
     profile(profileId: ID!): Profile
     profiles: [Profile]!
+    menuItems: [Product]!
   }
 
   type Mutation {
@@ -26,6 +31,7 @@ const typeDefs = gql`
     addProfile(name: String!, email: String!, password: String!): Profile
     removeProfile(profileId: ID!): Profile
     addToHistory(profileId: ID!, order: String!): Profile
+    addToMenu(product_name: String!, price: Int!): Product
   }
 `;
 
