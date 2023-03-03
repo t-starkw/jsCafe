@@ -32,6 +32,7 @@ const typeDefs = gql`
     removeProfile(profileId: ID!): Profile
     addToHistory(profileId: ID!, order: String!): Profile
     addToMenu(product_name: String!, price: Int!): Product
+    removeFromMenu(productId: ID!): Product
   }
 `;
 

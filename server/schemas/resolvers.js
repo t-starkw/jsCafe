@@ -67,6 +67,10 @@ const resolvers = {
 
       return newMenuItem;
     },
+
+    removeFromMenu: async (parent, { productId }) => {
+      return Menu.findOneAndDelete({ _id: productId })
+    },
   },
 };
 
