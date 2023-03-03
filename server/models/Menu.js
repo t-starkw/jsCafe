@@ -2,10 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const menuSchema = new Schema({
   id: {
-    type: Number,
-    required: true,
-    unique: true,
-    trim: true,
+    type: Number
   },
 
   product_name: {
