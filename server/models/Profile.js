@@ -23,12 +23,17 @@ const profileSchema = new Schema(
     required: true,
     minlength: 8,
   },
+
+  orderHistory: {
+    type: Array,
+    required: true
+  }
   
-  favOrder: [
-    {
-      type: Object,
-      trim: true,
-    },
+  // favOrder: [
+  //   {
+  //     type: Object,
+  //     trim: true,
+  //   },
   ],
 }
 );

@@ -13,19 +13,15 @@ const merchSchema = new Schema(
             required: true
         },
         price: {
-            type: Decimal128,
+            type: String,
             required: true,
-            validate: {
-                isDecimal: true
-            }
+
         },
         stock: {
             type: number,
             required: true,
             defaultValue: 10,
-            validate: {
-                isNumeric: true
-            }
+
         },
         category_id: {
             type: String,
