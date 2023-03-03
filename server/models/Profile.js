@@ -34,7 +34,7 @@ const profileSchema = new Schema(
   //     type: Object,
   //     trim: true,
   //   },
-  ],
+  // ],
 }
 );
 
