@@ -23,7 +23,7 @@ export const QUERY_SINGLE_PROFILE = gql`
 
 export const QUERY_MENU_ITEMS = gql`
     query allMenuItems {
-        menu {
+        menu_items {
             _id
             product_name
             price
