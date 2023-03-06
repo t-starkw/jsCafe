@@ -13,7 +13,7 @@ const resolvers = {
     },
 
     // Query all menu items
-    menuItems: async () => {
+    allMenuItems: async () => {
       return Product.find();
     },
   },

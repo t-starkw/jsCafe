@@ -23,7 +23,7 @@ const typeDefs = gql`
   type Query {
     profile(profileId: ID!): Profile
     profiles: [Profile]!
-    menuItems: [Product]!
+    allMenuItems: [Product]!
   }
 
   type Mutation {
