@@ -9,10 +9,12 @@ import MenuItems from "../components/MenuItems";
 import { QUERY_MENU_ITEMS } from "../utils/queries";
 
 export default function Menu() {
-  const { loading, error, data } = useQuery(QUERY_MENU_ITEMS);
+  const { loading, error, data } = useQuery(QUERY_MENU_ITEMS, {
+    fetchPolicy: "no-cache"
+  });
   console.log("Data", data);
 
-  const menu_items = data?.menu_items || [];
+  const menu_items = data?.allMenuItems || [];
   console.log("Menu items", menu_items);
 
   if (loading) return <p className="flex justify-center">Loading...</p>;
@@ -20,7 +22,22 @@ export default function Menu() {
 
   return (
     <div className="flex justify-center">
-      <MenuItems grid>{JSON.stringify(data)}</MenuItems>;
+          <div>
+      <div>
+        {menu_items &&
+          menu_items.map((menu_item) => (
+            <div>
+              <h4>
+                {menu_item.product_name} <br />
+              </h4>
+              <p>
+                {menu_item.price} <br />
+              </p>
+            </div>
+          ))}
+      </div>
+    </div>
+      {/* <MenuItems grid>{JSON.stringify(data)}</MenuItems>; */}
     </div>
   );
 }
