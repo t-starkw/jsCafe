@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/t-starkw/jsCafe#readme",
   "dependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.21"
   },
   "devDependencies": {
     "tailwindcss": "^3.2.7"

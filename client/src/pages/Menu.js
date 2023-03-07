@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
+import espresso from '../images/espresso2.jpeg';
 
 // import Home from "./Home";
 // import Order from "./Order";
@@ -32,7 +33,7 @@ export default function Menu() {
           <img
             class="p-8 rounded-t-lg"
             // ADD IMAGES LATER? OR REMOVE ALTOGETHER?
-            src=""
+            src= {espresso}
             alt=""
           />
         </a>
