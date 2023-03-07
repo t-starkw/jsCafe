@@ -17,6 +17,8 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.8.2",
     "react-scripts": "5.0.1",
+    "react-tooltip": "^5.9.1",
+    "styled-components": "^5.3.8",
     "three": "^0.150.1",
     "web-vitals": "^2.1.4"
   },
@@ -43,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwind-scrollbar": "^2.1.0"
   }
 }
