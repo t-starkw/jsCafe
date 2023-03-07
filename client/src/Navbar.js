@@ -29,7 +29,7 @@ export default function Navbar() {
             Order
           </CustomLink>
           <CustomLink
-            to="profile"
+            to="login"
             className="flex cursor-pointer capitalize font-medium text-black dark:text-white bg-rose-500"
           >
             Profile
