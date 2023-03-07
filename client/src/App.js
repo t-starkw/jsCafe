@@ -45,6 +45,8 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// shopping cart
+// const [cart, setCart] = useState({});
 
 function App() {
   return (
