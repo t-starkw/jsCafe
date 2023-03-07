@@ -3,7 +3,7 @@ import { Link, useMatch, useResolvedPath, useLocation } from "react-router-dom";
 import { BiFoodMenu, BiCoffee } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { TbPigMoney } from "react-icons/tb";
-import { MdDarkMode } from "react-icons/md";
+import { MdDarkMode, MdLogout} from "react-icons/md";
 import "./styles/App.css";
 import Auth from './utils/auth';
 
@@ -21,20 +21,23 @@ export default function Navbar({props}) {
           <CustomLink to="order">
             <SideBarIcon icon={<TbPigMoney size="28" />} />
           </CustomLink>
+          <SideBarIcon icon={<MdDarkMode size="28" />} />
           {/* To select last children */}
           <div className="fixed bottom-0 left-0 w-16 m-0 flex flex-col">
             <CustomLink to="login">
               <SideBarIcon icon={<CgProfile size="28" />} />
             </CustomLink>
-            <SideBarIcon icon={<MdDarkMode size="28" />} />
+            {/* This is where I added profile @Tessa */}
+            <CustomLink to="profile">
+              <SideBarIcon icon={<MdLogout size="28" />} />
+            </CustomLink>
           </div>
-          {Auth.loggedIn() ? ()}
+          {/* {Auth.loggedIn() ? ()} */}
         </ul>
       </nav>
     </div>
   );
 }
-
 
 const SideBarIcon = ({ icon, text = "tooltip"}) => (
   <div className="sidebar-icon group">
