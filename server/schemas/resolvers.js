@@ -1,4 +1,5 @@
 const { Profile, Product } = require("../models");
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -13,7 +14,7 @@ const resolvers = {
     },
 
     // Query all menu items
-    menuItems: async () => {
+    allMenuItems: async () => {
       return Product.find();
     },
   },
@@ -22,8 +23,8 @@ const resolvers = {
     // Add a new user profile
     addProfile: async (parent, { name, email, password }) => {
       const newProfile = await Profile.create({ name, email, password });
-
-      return newProfile;
+      const token = signToken(newProfile);
+      return {token, newProfile};
     },
 
     // Log into an existing user profile
@@ -39,8 +40,8 @@ const resolvers = {
       if (!correctPw) {
         throw new AuthenticationError("Incorrect password!");
       }
-
-      return profile;
+      const token = signToken(profile);
+      return {token, profile};
     },
 
     // Remove a user profile

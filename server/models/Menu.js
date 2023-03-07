@@ -4,7 +4,6 @@ const menuSchema = new Schema({
   id: {
     type: Number
   },
-
   product_name: {
     type: String,
     required: true,
@@ -14,6 +13,9 @@ const menuSchema = new Schema({
     type: Number,
     required: true,
   },
+  // image: {
+  // },
+  // FIGURE OUT HOW TO CATEGORIZE AS A FOOD OR DRINK ITEM
   // category: {
   //   type: Number,
   //   // references: {

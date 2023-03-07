@@ -23,12 +23,12 @@ const typeDefs = gql`
   type Query {
     profile(profileId: ID!): Profile
     profiles: [Profile]!
-    menuItems: [Product]!
+    allMenuItems: [Product]!
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
-    addProfile(name: String!, email: String!, password: String!): Profile
+    addProfile(name: String!, email: String!, password: String!): Auth
     removeProfile(profileId: ID!): Profile
     addToHistory(profileId: ID!, order: String!): Profile
     addToMenu(product_name: String!, price: Int!): Product
