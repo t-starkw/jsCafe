@@ -1,4 +1,5 @@
 const { Profile, Product } = require("../models");
+const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -16,6 +17,17 @@ const resolvers = {
     // Query all menu items
     allMenuItems: async () => {
       return Product.find();
+    },
+    me: async (parent, args, context) => {
+      if (context.profile) {
+        const userData = await Profile.findOne({ _id: context.profile._id })
+          .select("-__v -password")
+          .populate("order_history");
+
+        return userData;
+      }
+
+      throw new AuthenticationError("Not logged in");
     },
   },
 

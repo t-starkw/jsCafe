@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import "./styles/App.css";
+import Auth from './utils/auth';
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
@@ -28,12 +29,33 @@ export default function Navbar() {
           >
             Order
           </CustomLink>
-          <CustomLink
-            to="login"
-            className="flex cursor-pointer capitalize font-medium text-black dark:text-white bg-rose-500"
-          >
-            Profile
-          </CustomLink>
+
+          {Auth.loggedIn() ? (
+            <>
+              <CustomLink
+                to="profile"
+                className="flex cursor-pointer capitalize font-medium text-black dark:text-white bg-rose-500"
+              >
+                Profile
+              </CustomLink>
+              <CustomLink
+                onClick={Auth.logout}
+                className="flex cursor-pointer capitalize font-medium text-black dark:text-white bg-rose-500"
+              >
+                Logout
+              </CustomLink>
+
+            </>
+            ) : (
+            <CustomLink
+              to="login"
+              className="flex cursor-pointer capitalize font-medium text-black dark:text-white bg-rose-500"
+            >
+              Login/Signup
+            </CustomLink>
+          )}
+
+
         </ul>
       </nav>
     </div>

@@ -30,3 +30,14 @@ export const QUERY_MENU_ITEMS = gql`
         }
     }    
 `
+
+export const GET_ME = gql`
+{
+  me {
+    _id
+    name
+    email
+    order_history
+  }
+}
+`;
