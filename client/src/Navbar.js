@@ -5,6 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import { TbPigMoney } from "react-icons/tb";
 import { MdDarkMode } from "react-icons/md";
 import "./styles/App.css";
+import Auth from './utils/auth';
 
 export default function Navbar({props}) {
   return (
@@ -27,6 +28,7 @@ export default function Navbar({props}) {
             </CustomLink>
             <SideBarIcon icon={<MdDarkMode size="28" />} />
           </div>
+          {Auth.loggedIn() ? ()}
         </ul>
       </nav>
     </div>
