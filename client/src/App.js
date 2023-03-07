@@ -51,6 +51,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <>
+    <div className="overflow-hidden">
       <ApolloProvider client={client}>
         <Navbar />
         <div className="container">
@@ -64,6 +65,7 @@ function App() {
           </Routes>
         </div>
       </ApolloProvider>
+      </div>
     </>
   );
 }
