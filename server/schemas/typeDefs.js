@@ -23,6 +23,7 @@ const typeDefs = gql`
   type Query {
     profile(profileId: ID!): Profile
     profiles: [Profile]!
+    me: Profile
     allMenuItems: [Product]!
   }
 
