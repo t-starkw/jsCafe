@@ -3,11 +3,11 @@ import { Link, useMatch, useResolvedPath, useLocation } from "react-router-dom";
 import { BiFoodMenu, BiCoffee } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { TbPigMoney } from "react-icons/tb";
-import { MdDarkMode, MdLogout} from "react-icons/md";
+import { MdDarkMode, MdLogout, MdLogin } from "react-icons/md";
 import "./styles/App.css";
 import Auth from './utils/auth';
 
-export default function Navbar({props}) {
+export default function Navbar({ props }) {
   return (
     <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-gray-900 text-white shadow-lg">
       <nav>
@@ -24,22 +24,32 @@ export default function Navbar({props}) {
           <SideBarIcon icon={<MdDarkMode size="28" />} />
           {/* To select last children */}
           <div className="fixed bottom-0 left-0 w-16 m-0 flex flex-col">
-            <CustomLink to="login">
-              <SideBarIcon icon={<CgProfile size="28" />} />
-            </CustomLink>
-            {/* This is where I added profile @Tessa */}
-            <CustomLink to="profile">
-              <SideBarIcon icon={<MdLogout size="28" />} />
-            </CustomLink>
+            {Auth.loggedIn() ? (
+              <>
+
+                {/* This is where I added profile @Tessa */}
+                <CustomLink to="profile">
+                  <SideBarIcon icon={<CgProfile size="28" />} />
+                </CustomLink>
+                {/* Logout */}
+                <CustomLink onClick={Auth.logout}>
+                  <SideBarIcon icon={<MdLogout size="28" />} />
+                </CustomLink>
+              </>
+            ) : (
+              <CustomLink to="login">
+                <SideBarIcon icon={<MdLogin size="28" />} />
+              </CustomLink>
+            )}
+
           </div>
-          {/* {Auth.loggedIn() ? ()} */}
         </ul>
       </nav>
     </div>
   );
 }
 
-const SideBarIcon = ({ icon, text = "tooltip"}) => (
+const SideBarIcon = ({ icon, text = "tooltip" }) => (
   <div className="sidebar-icon group">
     {icon}
     <span className="sidebar-tooltip group-hover:scale-100">{text}</span>
