@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
+import espresso from "../images/espresso2.jpeg";
 import { useState } from "react";
 import { QUERY_MENU_ITEMS } from "../utils/queries";
 import espresso from "../images/espresso2.jpeg";
 import ShoppingCart from "../components/ShoppingCart";
-
 // import Home from "./Home";
 // import Order from "./Order";
 // import Profile from "./Profile";
@@ -29,6 +29,10 @@ export default function Menu(props) {
         <div className="grid grid-cols-4 gap-4">
           {menu_items &&
             menu_items.map((menu_item) => (
+              <div class="m-10 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                  <img
+                    class="p-8 rounded-t-lg"
               <div className="m-10 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                   <img
@@ -38,6 +42,20 @@ export default function Menu(props) {
                     alt=""
                   />
                 </a>
+                <div class="px-5 pb-5">
+                  <a href="#">
+                    <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                      {menu_item.product_name}
+                    </h5>
+                  </a>
+                  <div class="flex items-center mt-2.5 mb-5">
+                    {/* MAYBE ADD THIS LATER? WHAT ELSE COULD GO HERE? */}
+                    {/* <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">
+              {menu_item.description}
+            </span> */}
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white">
                 <div className="px-5 pb-5">
                   <a href="#">
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
@@ -56,9 +74,9 @@ export default function Menu(props) {
                     </span>
                     <a
                       href="#"
+                      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                       className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                       onClick={() => {
-
                         props.addToCart(menu_item);
 
                         let array = Object.keys(props.shoppingCart).map((key) => (
