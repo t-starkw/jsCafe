@@ -36,9 +36,29 @@ export default function Order() {
                     <div class="mt-4">
                         <div class="w-full">
                             <label for="Email"
-                                class="block mb-3 text-lg font-semibold text-gray-500">Email</label>
-                            <input name="Last Name" type="text" placeholder="Email"
+                                class="block mb-3 text-lg font-semibold text-gray-500">Credit Card Number</label>
+                            <input name="Credit Card Number" type="text" placeholder="0000 0000 0000 0000"
                                 class="w-full px-4 py-3 text-lg border border-gray-300 rounded lg:text-lg focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="w-full">
+                            <label for="Email"
+                                class="block mb-3 text-lg font-semibold text-gray-500">Billing Address</label>
+                            <input name="Last Name" type="text" placeholder="123 You and Me Ln"
+                                class="w-full px-4 py-3 text-lg border border-gray-300 rounded lg:text-lg focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
+                        </div>
+                    </div>
+                    <div class="space-x-0 lg:flex lg:space-x-4" className="mt-4 flex flex-row">
+                        <div class="lg:w-1/2" className="mr-4">
+                            <label for="firstName" class="block mb-3 text-lg font-semibold text-gray-500">State</label>
+                            <input name="firstName" type="text" placeholder="Ex:NC"
+                                class=" px-4 py-3 text-lg border border-gray-300 rounded lg:text-lg focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
+                        </div>
+                        <div class="w-full lg:w-1/2 ">
+                            <label for="firstName" class="block mb-3 text-lg font-semibold text-gray-500">Zip Code</label>
+                            <input name="Last Name" type="text" placeholder="#####"
+                                class="px-4 py-3 text-lg border border-gray-300 rounded lg:text-lg focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
                         </div>
                     </div>
                     <div class="mt-4">
