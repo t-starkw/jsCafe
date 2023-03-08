@@ -47,7 +47,7 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // shopping cart
+  // shopping cart, does cart need to be an [] or a {}?
   const [cart, setCart] = useState({});
   function addToCart(item) {
     let newCart = cart
