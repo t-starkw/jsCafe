@@ -1,4 +1,5 @@
 import React from "react";
+import espresso from "../images/espresso2.jpeg";
 // import Home from "./Home";
 // import Menu from "./Menu";
 // import Profile from "./Profile";
@@ -78,8 +79,12 @@ export default function Order() {
                     <div class="flex flex-col space-y-4">
                         <div class="flex space-x-4">
                             <div>
-                                <img src="https://source.unsplash.com/user/erondu/1600x900" alt="image"
-                                    class="w-60"></img>
+                            <img
+                    class="p-8 rounded-t-lg"
+                    // ADD IMAGES LATER? OR REMOVE ALTOGETHER?
+                    src={espresso}
+                    alt=""
+                  />
                             </div>
                             <div>
                                 <h2 class="text-xl font-bold">Title</h2>
@@ -96,8 +101,12 @@ export default function Order() {
                         </div>
                         <div class="flex space-x-4">
                             <div>
-                                <img src="https://source.unsplash.com/collection/190727/1600x900" alt="image"
-                                    class="w-60"></img>
+                            <img
+                    class="p-8 rounded-t-lg"
+                    // ADD IMAGES LATER? OR REMOVE ALTOGETHER?
+                    src={espresso}
+                    alt=""
+                  />
                             </div>
                             <div>
                                 <h2 class="text-xl font-bold">Title</h2>
