@@ -9,78 +9,63 @@ export default function Order() {
 
 <div>
     <div class="mt-20">
-    <h1 class="flex items-center justify-center font-bold text-blue-600 text-md lg:text-3xl">Tailwind CSS
-        Ecommerce
-        Checkout Page UI
+    <h1 class="flex items-center justify-center font-bold text-blue-600 text-4xl lg:text-6xl">JSCafe Checkout
     </h1>
 </div>
 <div class="container p-12 mx-auto ml-20">
     <div class="flex flex-col w-full px-0 mx-auto md:flex-row">
         <div class="flex flex-col md:w-full">
-            <h2 class="mb-4 font-bold md:text-xl text-heading ">Shipping Address
-            </h2>
+
             <form class="justify-center w-full mx-auto" method="post" action>
                 <div class="">
                     <div class="space-x-0 lg:flex lg:space-x-4">
                         <div class="w-full lg:w-1/2">
-                            <label for="firstName" class="block mb-3 text-sm font-semibold text-gray-500">First
+                            <label for="firstName" class="block mb-3 text-lg font-semibold text-gray-500">First
                                 Name</label>
                             <input name="firstName" type="text" placeholder="First Name"
-                                class="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
+                                class="w-full px-4 py-3 text-lg border border-gray-300 rounded lg:text-lg focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
                         </div>
                         <div class="w-full lg:w-1/2 ">
-                            <label for="firstName" class="block mb-3 text-sm font-semibold text-gray-500">Last
+                            <label for="firstName" class="block mb-3 text-lg font-semibold text-gray-500">Last
                                 Name</label>
                             <input name="Last Name" type="text" placeholder="Last Name"
-                                class="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
+                                class="w-full px-4 py-3 text-lg border border-gray-300 rounded lg:text-lg focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
                         </div>
                     </div>
                     <div class="mt-4">
                         <div class="w-full">
                             <label for="Email"
-                                class="block mb-3 text-sm font-semibold text-gray-500">Email</label>
+                                class="block mb-3 text-lg font-semibold text-gray-500">Email</label>
                             <input name="Last Name" type="text" placeholder="Email"
-                                class="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
+                                class="w-full px-4 py-3 text-lg border border-gray-300 rounded lg:text-lg focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
                         </div>
                     </div>
                     <div class="mt-4">
                         <div class="w-full">
                             <label for="Address"
-                                class="block mb-3 text-sm font-semibold text-gray-500">Address</label>
-                            <textarea
-                                class="w-full px-4 py-3 text-xs border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"
-                                name="Address" cols="20" rows="4" placeholder="Address"></textarea>
+                                class="block mb-3 text-lg font-semibold text-gray-500">Phone</label>
+                           <input name="Last Name" type="tel" placeholder="(***)-***-****"
+                                class="w-70 px-4 py-3 text-lg border border-gray-300 rounded lg:text-lg focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
                         </div>
                     </div>
                     <div class="space-x-0 lg:flex lg:space-x-4">
-                        <div class="w-full lg:w-1/2">
-                            <label for="city"
-                                class="block mb-3 text-sm font-semibold text-gray-500">City</label>
-                            <input name="city" type="text" placeholder="City"
-                                class="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
-                        </div>
-                        <div class="w-full lg:w-1/2 ">
-                            <label for="postcode" class="block mb-3 text-sm font-semibold text-gray-500">
-                                Postcode</label>
-                            <input name="postcode" type="text" placeholder="Post Code"
-                                class="w-full px-4 py-3 text-sm border border-gray-300 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
-                        </div>
+                      
                     </div>
                     <div class="flex items-center mt-4">
-                        <label class="flex items-center text-sm group text-heading">
+                        <label class="flex items-center text-lg group text-heading">
                             <input type="checkbox"
                                 class="w-5 h-5 border border-gray-300 rounded focus:outline-none focus:ring-1"></input>
                             <span class="ml-2">Save this information for next time</span></label>
                     </div>
                     <div class="relative pt-3 xl:pt-6"><label for="note"
-                            class="block mb-3 text-sm font-semibold text-gray-500"> Notes
+                            class="block mb-3 text-lg font-semibold text-gray-500"> Special Requests
                             (Optional)</label><textarea name="note"
-                            class="flex items-center w-full px-4 py-3 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-600"
-                            rows="4" placeholder="Notes for delivery"></textarea>
+                            class="flex items-center w-full px-4 py-3 text-lg border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-600"
+                            rows="4" placeholder="Let us know it you have any special requests. (ex: Extra sweet, no cream, etc)"></textarea>
                     </div>
-                    <div class="mt-4">
+                    <div class="mt-4 flex-row items-center">
                         <button
-                            class="w-full px-6 py-2 text-blue-200 bg-blue-600 hover:bg-blue-900">Process</button>
+                            class="flex-row justify-center px-6 py-2 text-bold text-4xl text-blue-200 bg-blue-600 hover:bg-blue-900">Checkout</button>
                     </div>
                 </div>
             </form>
@@ -134,10 +119,8 @@ export default function Order() {
                 </div>
                 <div
                     class="flex items-center w-full py-4 text-sm font-semibold border-b border-gray-300 lg:py-5 lg:px-3 text-heading last:border-b-0 last:text-base last:pb-0">
-                    Subtotal<span class="ml-2">$40.00</span></div>
-                <div
-                    class="flex items-center w-full py-4 text-sm font-semibold border-b border-gray-300 lg:py-5 lg:px-3 text-heading last:border-b-0 last:text-base last:pb-0">
-                    Shipping Tax<span class="ml-2">$10</span></div>
+                    <span class="ml-2"></span></div>
+
                 <div
                     class="flex items-center w-full py-4 text-sm font-semibold border-b border-gray-300 lg:py-5 lg:px-3 text-heading last:border-b-0 last:text-base last:pb-0">
                     Total<span class="ml-2">$50.00</span></div>
