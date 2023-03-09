@@ -125,7 +125,7 @@ const How = () => {
         <Title>JsCafe</Title>
             <Subtitle>Heres how it works!-</Subtitle>
           <Desc>
-            Kelly this section is for you
+            Install your daily Java updates with us.
           </Desc>
         </Right>
       </Container>
