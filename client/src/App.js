@@ -4,6 +4,7 @@ import Order from "./pages/Order";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Thanks from "./pages/Thanks";
 import Navbar from "./Navbar";
 import { BrowserRouter } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
@@ -18,6 +19,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+
 
 const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql",
@@ -54,6 +56,7 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/thanks" element={<Thanks />} />
             </Routes>
           </div>
         </ApolloProvider>
