@@ -50,30 +50,32 @@ function App() {
   // shopping cart, does cart need to be an [] or a {}?
   const [cart, setCart] = useState({});
   function addToCart(item) {
-    let newCart = cart
-    newCart[item.product_name] = newCart[item.product_name] ? newCart[item.product_name] + 1 : 1 
-    setCart(newCart)
+    let newCart = cart;
+    newCart[item.product_name] = newCart[item.product_name]
+      ? newCart[item.product_name] + 1
+      : 1;
+    setCart(newCart);
   }
 
   return (
     <>
-    <div className="overflow-hidden">
-      <ApolloProvider client={client}>
-        <Navbar />
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/menu"
-              element={<Menu shoppingCart={cart} addToCart={addToCart} />}
-            />
-            <Route path="/order" element={<Order />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-        </div>
-      </ApolloProvider>
+      <div className="overflow-hidden">
+        <ApolloProvider client={client}>
+          <Navbar />
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/menu"
+                element={<Menu shoppingCart={cart} addToCart={addToCart} />}
+              />
+              <Route path="/order" element={<Order />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+            </Routes>
+          </div>
+        </ApolloProvider>
       </div>
     </>
   );
