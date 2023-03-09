@@ -109,9 +109,8 @@ const Hero = () => {
       <Container>
         <Left>
           <Title>JsCafe</Title>
-            <Sub>The worlds #1 online cafe</Sub>
-          <Desc>
-            This is for kelly to fill in.
+          <Sub>The world's #1 online cafe</Sub>
+          <Desc>Install your daily Java updates with us.
           </Desc>
         </Left>
         <Right>
