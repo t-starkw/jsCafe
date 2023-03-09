@@ -64,13 +64,14 @@ function MenuItems(props) {
                 className="text-white bg-teal-600 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 onClick={() => {
                   console.log(x);
-
                   addToCart(x);
                   console.log(cart);
                 }}
               >
                 Add to cart
               </a>
+                </div>
+            ))}
             </div>
           </div>
         </div>
