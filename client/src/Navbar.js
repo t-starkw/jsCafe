@@ -41,7 +41,14 @@ export default function Navbar({ props }) {
             </CustomLink>
             <Tooltip id="order" place="right" /> */}
             <CustomLink data-tooltip-id="dark" data-tooltip-content="Dark Mode">
-              <SideBarIcon icon={<MdDarkMode onClick={() => setDarkMode(!darkMode)} size="28" />} />
+              <SideBarIcon
+                icon={
+                  <MdDarkMode
+                    onClick={() => setDarkMode(!darkMode)}
+                    size="28"
+                  />
+                }
+              />
             </CustomLink>
             <Tooltip id="dark" place="right" />
             {/* To select last children */}

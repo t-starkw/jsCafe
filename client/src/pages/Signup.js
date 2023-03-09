@@ -90,16 +90,7 @@ const Signup = () => {
                   style={{ cursor: "pointer" }}
                   type="submit"
                 >
-                  Sign In
-                </button>
-                <button
-                  className="w-2/5  py-3  bg-teal-400 hover:bg-teal-800 relative rounded-3xl text-gray-100 "
-                  style={{ cursor: "pointer" }}
-                  type="submit"
-                >
-                  <Link to="/login">
-                    Log in
-                  </Link>
+                  Sign Up
                 </button>
               </div>
             </form>
