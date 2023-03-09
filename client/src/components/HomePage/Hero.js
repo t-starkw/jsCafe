@@ -111,7 +111,7 @@ const Hero = () => {
           <Title>JsCafe</Title>
             <Sub>The worlds #1 online cafe</Sub>
           <Desc>
-            Lorem Ipsum not working in react :(
+            This is for kelly to fill in.
           </Desc>
         </Left>
         <Right>
