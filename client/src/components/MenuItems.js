@@ -36,6 +36,8 @@ function MenuItems(props) {
       await addToHistory({
         variables: { input: order },
       });
+      window.location.assign('/thanks');
+
     } catch (err) {
       console.log(JSON.stringify(err, null, 2));
     }
