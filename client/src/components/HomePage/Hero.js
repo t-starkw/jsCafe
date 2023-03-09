@@ -110,7 +110,7 @@ const Hero = () => {
         <Left>
           <Title>JsCafe</Title>
           <Sub>The world's #1 online cafe</Sub>
-          <Desc>Install your daily Java updates with us.
+          <Desc>May your coffee kick in before reality does.
           </Desc>
         </Left>
         <Right>
