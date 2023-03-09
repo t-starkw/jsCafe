@@ -32,14 +32,14 @@ export default function Navbar({ props }) {
               <SideBarIcon icon={<BiFoodMenu size="28" name="menu" />} />
             </CustomLink>
             <Tooltip id="menu" place="right" />
-            <CustomLink
+            {/* <CustomLink
               to="order"
               data-tooltip-id="order"
               data-tooltip-content="Order"
             >
               <SideBarIcon icon={<TbPigMoney size="28" />} />
             </CustomLink>
-            <Tooltip id="order" place="right" />
+            <Tooltip id="order" place="right" /> */}
             <CustomLink data-tooltip-id="dark" data-tooltip-content="Dark Mode">
               <SideBarIcon icon={<MdDarkMode onClick={() => setDarkMode(!darkMode)} size="28" />} />
             </CustomLink>
