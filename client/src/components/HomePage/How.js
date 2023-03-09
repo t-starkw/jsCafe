@@ -123,7 +123,7 @@ const How = () => {
         </Left>
         <Right>
         <Title>JsCafe</Title>
-            <Subtitle>Heres how it works!-</Subtitle>
+            <Subtitle>Here's how it works!-</Subtitle>
           <Desc>
             Install your daily Java updates with us.
           </Desc>
