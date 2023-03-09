@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Zachary Berkley",
+        "email": "zachary@berkley.com",
+        "password": "zacharyberkley",
+        "order_history": [
+            "gross food",
+            "Iced Coffee"
+    ]
+    },
+    {
+        "name": "Adrian Carter",
+        "email": "adrian@carter.com",
+        "password": "adriancarter",
+        "order_history": [
+            "Cappuccino",
+            "Chocolate Croissant"
+    ]
+    },
+    {
+        "name": "Emre Eyupoglu",
+        "email": "emre@eyupoglu.com",
+        "password": "emreeyupoglu",
+        "order_history": [
+            "Bagel",
+            "Cappuccino"
+    ]
+    },
+    {
+        "name": "Sean Fitzpatrick",
+        "email": "sean@fitzpatrick.com",
+        "password": "seanfitzpatrick",
+        "order_history": [
+            "Blueberry Muffin",
+            "Latte"
+    ]
+    },
+    {
+        "name": "Tessa Starkweather",
+        "email": "tessa@starkweather.com",
+        "password": "tessastarkweather",
+        "order_history": [
+            "Iced Coffee",
+            "Bagel"
+    ]
+    },
+    {
+        "name": "Kelly Williams",
+        "email": "kelly@williams.com",
+        "password": "kellywilliams",
+        "order_history": [
+            "Americano",
+            "Chocolate Croissant"
+    ]
+    }
+]

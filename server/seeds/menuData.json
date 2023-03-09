@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "product_name": "Espresso",
+        "price": 2
+
+    },
+    {
+        "id": 2,
+        "product_name": "Iced Coffee",
+        "price": 4
+
+    },
+    {
+        "id": 3,
+        "product_name": "Latte",
+        "price": 4
+
+    },
+    {
+        "id": 4,
+        "product_name": "Americano",
+        "price": 2
+
+    },
+    {
+        "id": 5,
+        "product_name": "Cappuccino",
+        "price": 3
+
+    },
+    {
+        "id": 6,
+        "product_name": "Bagel",
+        "price": 2
+
+    },
+    {
+        "id": 7,
+        "product_name": "Chocolate Croissant",
+        "price": 3
+
+    },
+    {
+        "id": 8,
+        "product_name": "Blueberry Muffin",
+        "price": 3
+
+    }
+]
