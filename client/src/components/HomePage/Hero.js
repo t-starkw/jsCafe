@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
-import mug from "../../public/home-cup.png"
+import logo from "../../public/jscafelogo192.png"
 
 const Section = styled.div`
   font-family: monospace;
@@ -10,8 +10,7 @@ const Section = styled.div`
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
-  align-items: right;
-  text-align: right;
+  align-items: center;
   justify-content: space-between;
   @media only screen and (max-width: 768px) {
     height: 200vh;
@@ -21,14 +20,14 @@ const Section = styled.div`
 const Container = styled.div`
   height: 100%;
   scroll-snap-align: center;
-  width: 100vw;
+  width: 1400px;
   display: flex;
-  text-align: right;
   justify-content: space-between;
   @media only screen and (max-width: 768px) {
     width: 100%;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -41,7 +40,7 @@ const Left = styled.div`
   gap: 20px;
   @media only screen and (max-width: 768px) {
     flex: 1;
-    align-items: right;
+    align-items: center;
   }
 `;
 
@@ -49,24 +48,27 @@ const Title = styled.h1`
   font-size: 74px;
   color: #ebedef;
   @media only screen and (max-width: 768px) {
-    text-align: right;
+    text-align: center;
   }
 `;
 
+const WhatWeAre = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
 
-const Sub = styled.h2`
+const Subtitle = styled.h2`
   font-size: 36px;
-  text-align: right;
   color: #2DD4BF;
 `;
 
 const Desc = styled.p`
   font-size: 24px;
   color: #ebedef;
-  text-align: right;
   @media only screen and (max-width: 768px) {
     padding: 20px;
-    text-align: right;
+    text-align: center;
   }
 `;
 
@@ -74,7 +76,6 @@ const Desc = styled.p`
 const Right = styled.div`
   flex: 3;
   position: relative;
-  text-align: right;
   @media only screen and (max-width: 768px) {
     flex: 1;
     width: 100%;
@@ -93,12 +94,12 @@ const Img = styled.img`
   margin: auto;
   animation: animate 2s infinite ease alternate;
   @media only screen and (max-width: 768px) {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
   }
   @keyframes animate {
     to {
-      transform: translateY(30px);
+      transform: translateY(20px);
     }
   }
 `;
@@ -109,7 +110,9 @@ const Hero = () => {
       <Container>
         <Left>
           <Title>JsCafe</Title>
-            <Sub>The worlds #1 online cafe</Sub>
+          <WhatWeAre>
+            <Subtitle>Worlds best digital cafe.</Subtitle>
+          </WhatWeAre>
           <Desc>
             Lorem Ipsum not working in react :(
           </Desc>
@@ -118,11 +121,11 @@ const Hero = () => {
           <Canvas>
             <Suspense fallback={null}>
               <OrbitControls enableZoom={false} />
-              <ambientLight intensity={3} />
+              <ambientLight intensity={1} />
               <directionalLight position={[2]} />
               <Sphere args={[1, 100, 200]} scale={2}>
                 <MeshDistortMaterial
-                  color="#ebedef"
+                  color="#36393f"
                   attach="material"
                   distort={0.5}
                   speed={2}
@@ -130,7 +133,7 @@ const Hero = () => {
               </Sphere>
             </Suspense>
           </Canvas>
-          <Img src={mug} />
+          <Img src={logo} />
         </Right>
       </Container>
     </Section>
