@@ -36,26 +36,13 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-// const client = new ApolloClient({
-//   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
-//   // link: authLink.concat(httpLink),
-//   cache: new InMemoryCache(),
-// });
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
 function App() {
-  // shopping cart, does cart need to be an [] or a {}?
-  const [cart, setCart] = useState({});
-  function addToCart(item) {
-    let newCart = cart;
-    newCart[item.product_name] = newCart[item.product_name]
-      ? newCart[item.product_name] + 1
-      : 1;
-    setCart(newCart);
-  }
+
 
   return (
     <>
@@ -67,8 +54,9 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route
                 path="/menu"
-                element={<Menu shoppingCart={cart} addToCart={addToCart} />}
+                element={<Menu />}
               />
+               {/* shoppingCart={cart} addToCart={addToCart} */}
               <Route path="/order" element={<Order />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/login" element={<Login />} />

@@ -10,8 +10,8 @@ const menuSchema = new Schema({
     unique: true,
   },
   price: {
-    type: Number,
-    required: true,
+    type: Number
+    
   },
   // image: {
   // },
@@ -25,6 +25,5 @@ const menuSchema = new Schema({
   // },
 });
 
-const Product = model('Product', menuSchema);
 
-module.exports = Product;
+module.exports = menuSchema;

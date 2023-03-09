@@ -37,7 +37,10 @@ export const GET_ME = gql`
     _id
     name
     email
-    order_history
+    order_history {
+      product_name
+      price
+    }
   }
 }
 `;
