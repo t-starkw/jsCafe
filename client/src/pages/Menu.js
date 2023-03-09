@@ -12,6 +12,7 @@ import ShoppingCart from "../components/ShoppingCart";
 
 export default function Menu(props) {
   const [cart, setCart] = useState([]);
+  const [history, setHistory] = useState([]);
   const { loading, error, data } = useQuery(QUERY_MENU_ITEMS, {
     fetchPolicy: "no-cache",
   });
@@ -20,8 +21,8 @@ export default function Menu(props) {
   const menu_items = data?.allMenuItems || [];
   console.log("Menu items", menu_items);
 
-  if (loading) {return <p className="flex justify-center">Loading...</p>};
-  if (error) {return `Error! ${error.message}`};
+  if (loading) { return <p className="flex justify-center">Loading...</p> };
+  if (error) { return `Error! ${error.message}` };
 
   return (
     <div className="flex justify-center ml-20">
@@ -60,15 +61,20 @@ export default function Menu(props) {
                       onClick={() => {
 
                         props.addToCart(menu_item);
+                        history.push({
+                          product_name: menu_item.product_name,
+                          price: menu_item.price
+                        })
+                        console.log(history)
 
                         let array = Object.keys(props.shoppingCart).map((key) => (
                           <p>
                             {key} x {props.shoppingCart[key]}
                           </p>
                         ));
-
+                        setHistory(history)
                         setCart(array)
-                      
+
                         console.log("array", array)
                         console.log("props", props.shoppingCart);
                         console.log("keys", Object.keys(props.shoppingCart));
@@ -84,8 +90,16 @@ export default function Menu(props) {
 
         {/* TESTING GROUNDS */}
         <div className="m-10 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            Your shopping cart:
-            {cart}
+          Your shopping cart:
+          {cart}
+        </div>
+        <div>
+          <a
+            href="#"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            onClick={() => { }}>
+            Checkout
+          </a>
         </div>
       </div>
 
