@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useMutation } from '@apollo/client';
+
 import { useQuery } from "@apollo/client";
 
 import { GET_ME } from '../utils/queries';
-import { Link } from "react-router-dom";
-
 import Auth from '../utils/auth';
 
 const Profile = () => {
@@ -13,6 +11,8 @@ const Profile = () => {
     console.log(userData);
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+
 
     if (!token) {
         return "sorry, you need to login";
@@ -25,8 +25,12 @@ const Profile = () => {
 
     return (
         <>
-        <div>
-            Hello welcome to ur profile
+        <div className="text-center">
+            Hello {userData.name}
+        </div>
+        <div className="text-center">
+            {console.log(userData.order_history[10].product_name)}
+            {userData.order_history[10].product_name}
         </div>
         </>
     )

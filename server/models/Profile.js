@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const menuSchema = require('./Menu')
 
 const profileSchema = new Schema(
   
@@ -24,19 +25,8 @@ const profileSchema = new Schema(
     minlength: 8,
   },
   
-  order_history: [
-    {
-      type: Object,
-      trim: true,
-    },
-  ],
+  order_history: [menuSchema],
 
-  favOrder: [
-    {
-      type: Object,
-      trim: true,
-    },
-  ],
 }
 );
 

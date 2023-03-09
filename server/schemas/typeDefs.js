@@ -6,18 +6,25 @@ const typeDefs = gql`
     name: String!
     email: String!
     password: String!
-    order_history: [String!]
+    order_history: [Product]
   }
 
   type Product {
     _id: ID
-    product_name: String!
-    price: Int!
+    product_name: String
+    price: Int
   }
 
   type Auth {
     token: ID!
     profile: Profile
+}
+
+input ProductInput {
+  _id: ID
+  product_name: String
+  price: Int
+
 }
 
   type Query {
@@ -31,7 +38,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addProfile(name: String!, email: String!, password: String!): Auth
     removeProfile(profileId: ID!): Profile
-    addToHistory(profileId: ID!, order: String!): Profile
+    addToHistory(input: [ProductInput]): Profile
     addToMenu(product_name: String!, price: Int!): Product
     removeFromMenu(productId: ID!): Product
   }

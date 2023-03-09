@@ -39,13 +39,13 @@ mutation removeProfile($profileId: ID!) {
 `;
 
 export const ADD_HISTORY = gql`
-mutation addToHistory($profileId: ID!, $order: String!) {
-  addToHistory(profileId: $profileId, order: $order) {
-    profile {
-      _id
-      name
-      email
-      order_history
+mutation addToHistory($input: [ProductInput]) {
+  addToHistory(input: $input) {
+    email
+    name
+    order_history {
+      price
+      product_name
     }
   }
 }

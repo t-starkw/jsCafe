@@ -62,17 +62,16 @@ const resolvers = {
     },
 
     // Add order to order history
-    addToHistory: async (parent, { profileId, order }) => {
-      return Profile.findOneAndUpdate(
-        { _id: profileId },
-        {
-          $addToSet: { order_history: order },
-        },
-        {
-          new: true,
-          runValidators: true,
-        }
-      );
+    addToHistory: async (parent, { input }, context) => {
+      if (context.profile) {
+        const updatedProfile = await Profile.findOneAndUpdate(
+          { _id: context.profile._id },
+          { $addToSet: { order_history: input } },
+          { new: true, runValidators: true }
+        );
+        return updatedProfile;
+      }
+      throw new AuthenticationError("You need to log in");
     },
 
     addToMenu: async (parent, { product_name, price }) => {
