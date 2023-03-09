@@ -10,6 +10,10 @@ const Profile = () => {
     let userData = data?.me || {};
     console.log(userData);
 
+    const orderHistory = userData.order_history
+    console.log(orderHistory);
+
+
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
 
@@ -29,8 +33,14 @@ const Profile = () => {
             Hello {userData.name}
         </div>
         <div className="text-center">
-            {console.log(userData.order_history[10].product_name)}
-            {userData.order_history[10].product_name}
+            Your Favorites:
+            {orderHistory.length > 0 &&
+            
+            orderHistory.map((item) => (
+                <ul>
+                    <li>{item.product_name} ${item.price}</li>
+                </ul>
+            ))}
         </div>
         </>
     )
