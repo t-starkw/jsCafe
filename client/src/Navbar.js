@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import { TbPigMoney } from "react-icons/tb";
 import { MdDarkMode, MdLogout, MdLogin } from "react-icons/md";
 import "./styles/App.css";
-import Auth from './utils/auth';
+import Auth from "./utils/auth";
 
 export default function Navbar({ props }) {
   return (
@@ -26,8 +26,6 @@ export default function Navbar({ props }) {
           <div className="fixed bottom-0 left-0 w-16 m-0 flex flex-col">
             {Auth.loggedIn() ? (
               <>
-
-                {/* This is where I added profile @Tessa */}
                 <CustomLink to="profile">
                   <SideBarIcon icon={<CgProfile size="28" />} />
                 </CustomLink>
@@ -41,7 +39,6 @@ export default function Navbar({ props }) {
                 <SideBarIcon icon={<MdLogin size="28" />} />
               </CustomLink>
             )}
-
           </div>
         </ul>
       </nav>
