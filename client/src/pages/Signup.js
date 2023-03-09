@@ -1,109 +1,113 @@
 import React, { useState, useEffect } from "react";
 
-import { useMutation } from '@apollo/client';
-import { ADD_PROFILE } from '../utils/mutations';
+import { useMutation } from "@apollo/client";
+import { ADD_PROFILE } from "../utils/mutations";
 import { Link } from "react-router-dom";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const Signup = () => {
-    const [formState, setFormState] = useState({
-        name: '',
-        email: '',
-        password: '',
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
     });
-    const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
+  };
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
 
-        setFormState({
-            ...formState,
-            [name]: value,
-        });
-    };
+    try {
+      const { data } = await addProfile({
+        variables: { ...formState },
+      });
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        console.log(formState);
+      Auth.login(data.addProfile.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
-        try {
-            const { data } = await addProfile({
-                variables: { ...formState },
-            });
+  return (
+    <>
+      <div className="w-screen h-screen bg-gray-600 text-gray-800 dark:bg-gray-400">
+        <div className="flex justify-center items-center h-full flex-wrap content-around">
+          <div>
+            <form
+              className="w-96 h-96 gap-3 mx-auto bg-gray-400 text-gray-800 rounded-3xl px-14 py-2"
+              onSubmit={handleFormSubmit}
+            >
+              <h2 className="text-4xl font-bold text-center text-gray-800 py-4">
+                Sign Up
+              </h2>
 
-            Auth.login(data.addProfile.token);
-        } catch (e) {
-            console.error(e);
-        }
-    };
+              <div className="pt-4 flex flex-col mb-1 text-gray-800">
+                <input
+                  className="border relative bg-teal-600 hover:bg-teal-800 p-3 rounded-3xl form-input"
+                  placeholder="Your Name"
+                  name="name"
+                  type="text"
+                  value={formState.name}
+                  onChange={handleChange}
+                />
+              </div>
 
-    return (
-        <div className="relative w-full h-screen bg-pink-400">
-            <div className="flex justify-center items-center h-full flex-wrap content-around">
-                <div>
-                    <form
-                        className="max-w-[400px] w-full mx-auto bg-white rounded px-10 py-2"
-                        onSubmit={handleFormSubmit}
-                    >
-                        <h2 className="text-4xl font-bold text-center py-4">Sign Up</h2>
+              <div className="flex flex-col mb-1 text-gray-800">
+                <input
+                  className="border relative bg-teal-600 hover:bg-teal-800 p-3 rounded-3xl form-input"
+                  placeholder="Your email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                />
+              </div>
 
-                        <div className="flex flex-col mb-1">
-                            <label>Name</label>
-                            <input
-                                className="border relative bg-blue-200 p-2 form-input"
-                                placeholder="Your Name"
-                                name="name"
-                                type="text"
-                                value={formState.name}
-                                onChange={handleChange}
-                            />
-                        </div>
+              <div className="flex flex-col mb-1 text-gray-800">
+                <input
+                  className="border relative bg-teal-600 hover:bg-teal-800 p-3 rounded-3xl form-input"
+                  type="password"
+                  placeholder="Your Password"
+                  name="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+              </div>
 
-                        <div className="flex flex-col mb-1">
-                            <label>Email</label>
-                            <input
-                                className="border relative bg-blue-200 p-2 form-input"
-                                placeholder="Your email"
-                                name="email"
-                                type="email"
-                                value={formState.email}
-                                onChange={handleChange}
-
-                            />
-                        </div>
-
-                        <div className="flex flex-col mb-1">
-                            <label>Password</label>
-                            <input
-                                className="border relative bg-blue-400 p-2 form-input"
-                                type="password"
-                                placeholder="******"
-                                name="password"
-                                value={formState.password}
-                                onChange={handleChange}
-
-                            />
-                        </div>
-
-                        <button
-                            className="w-full py-3 mt-8 bg-blue-600 relative text-white "
-                            style={{ cursor: 'pointer' }}
-                            type="submit"
-                        >
-                            Sign Up
-                        </button>
-                        {/* <p className="flex items-center mt-2">
-                            <input className="mr-2" type="checkbox" />
-                            Remember Me
-                        </p> */}
-
-                        <Link to="/login">Log in</Link>
-                    </form>
-                </div>
-            </div>
+              <div className="flex items-center justify-center pt-5">
+                <button
+                  className="w-2/5 py-3  bg-teal-400 hover:bg-teal-800 relative rounded-3xl text-gray-100 "
+                  style={{ cursor: "pointer" }}
+                  type="submit"
+                >
+                  Sign In
+                </button>
+                <button
+                  className="w-2/5  py-3  bg-teal-400 hover:bg-teal-800 relative rounded-3xl text-gray-100 "
+                  style={{ cursor: "pointer" }}
+                  type="submit"
+                >
+                  <Link to="/login">
+                    Log in
+                  </Link>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-    );
-}
+      </div>
+    </>
+  );
+};
 
 export default Signup;

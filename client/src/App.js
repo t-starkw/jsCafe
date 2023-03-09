@@ -5,7 +5,6 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbar from "./Navbar";
-import ShoppingCart from "./components/ShoppingCart";
 import { BrowserRouter } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
@@ -42,8 +41,6 @@ const client = new ApolloClient({
 });
 
 function App() {
-
-
   return (
     <>
       <div className="overflow-hidden">
@@ -52,11 +49,7 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route
-                path="/menu"
-                element={<Menu />}
-              />
-               {/* shoppingCart={cart} addToCart={addToCart} */}
+              <Route path="/menu" element={<Menu />} />
               <Route path="/order" element={<Order />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/login" element={<Login />} />
