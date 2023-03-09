@@ -8,9 +8,9 @@ import espresso from "../images/espresso2.jpeg";
 
 function MenuItems(props) {
 
-    // shopping cart, does cart need to be an [] or a {}?
+
     const [cart, setCart] = useState([]);
-    const [cartDiv, setDiv] = useState({});
+
 
     function addToCart(x) {
         const updateCart = [
@@ -37,6 +37,7 @@ function MenuItems(props) {
             await addToHistory({
                 variables: {input: order},
             })
+            window.location.assign('/profile');
         } catch(err) {
             console.log(JSON.stringify(err, null, 2));
         }
@@ -96,7 +97,7 @@ function MenuItems(props) {
                 </div>
                 <div>
                     <a
-                        href="/order"
+                        href="/"
                         className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         onClick={() => {
                             console.log(cart)
