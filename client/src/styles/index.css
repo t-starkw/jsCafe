@@ -8,6 +8,7 @@
                 h-12 w-12 mt-2 mb-2 mx-auto
                 bg-gray-600 text-teal-400
                 hover:bg-teal-400 hover:text-gray-800
+                dark:bg-gray-400 dark:text-teal-600
                 rounded-3xl hover:rounded-xl
                 transition-all duration-200 ease-linear cursor-pointer;
   }
