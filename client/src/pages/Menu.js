@@ -6,6 +6,7 @@ const menuItems = [
     _id: 1,
     product_name: "Espresso",
     price: 2,
+    image: "../../public/espresso.png"
   },
   {
     _id: 2,

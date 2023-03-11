@@ -57,6 +57,7 @@ mutation addToMenu($productName: String!, $price: Int!) {
     _id
     price
     product_name
+    image
   }
 }
 `;
@@ -67,6 +68,7 @@ mutation removeFromMenu($productId: ID!) {
     _id
     price
     product_name
+    image
   }
 }
 `;

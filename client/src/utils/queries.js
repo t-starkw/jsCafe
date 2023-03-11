@@ -27,6 +27,7 @@ export const QUERY_MENU_ITEMS = gql`
             _id
             product_name
             price
+            image
         }
     }    
 `

@@ -13,8 +13,9 @@ const menuSchema = new Schema({
     type: Number
     
   },
-  // image: {
-  // },
+  image: {
+    type: String
+  },
   // FIGURE OUT HOW TO CATEGORIZE AS A FOOD OR DRINK ITEM
   // category: {
   //   type: Number,
