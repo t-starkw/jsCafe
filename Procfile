@@ -1,1 +1,1 @@
-web:node server/server.js
+web:concurrently \"cd server && npm run watch\" \"cd client && npm start\"
