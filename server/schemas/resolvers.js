@@ -74,8 +74,8 @@ const resolvers = {
       throw new AuthenticationError("You need to log in");
     },
 
-    addToMenu: async (parent, { product_name, price }) => {
-      const newMenuItem = await Product.create({ product_name, price });
+    addToMenu: async (parent, { product_name, price, image }) => {
+      const newMenuItem = await Product.create({ product_name, price, image });
 
       return newMenuItem;
     },

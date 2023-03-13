@@ -1,6 +1,21 @@
 # JsCafe
->### UNC Coding Bootcamp Final Project - Interacting MERN Stack SPA <br><br>
-> insert stuff and things <br><br>
+### UNC Coding Bootcamp Final Project - Interacting MERN Stack SPA <br><br>
+
+## Table of Contents
+- [Our Story](#our-story)
+- [Technology Used](#technology-used)
+- [Screenshots](#screenshots) 
+- [Installation](#installation)
+- [Usage](#usage)
+- [Deployed Application](#deployed-application)
+- [Authors](#authors)
+- [Contributing](#contributing)
+
+
+## Our Story
+Welcome to JsCafe! Our full-stack web application allows users to view and order a selection of food and drink items from their phone. Users can keep an open tab until they are ready to settle their bill. If the user has an account, the app stores their order history and keeps track of their favorite orders. <br><br><b>MongoDB</b> was used to develop the schemas and server-side functionality of this application.<br><b>Express.js</b> was used for managing servers and routes. <br><b>React</b> was used to develop the UI/UX.<br>This application was built on <b>Node.js</b>. <br><br>
+
+## Technology Used
 
 ![JavaScript][js-url]
 ![HTML][html-url]
@@ -14,7 +29,7 @@
 ![GraphQL][graphql-url]
 ![TailwindCSS][tailwindcss-url]
 
-
+## Screenshots
 ![Image](https://drive.google.com/uc?export=view&id=1hDQd3ccP78WglCZLrumH-bfi1Att0H1R)
 ![Image](https://drive.google.com/uc?export=view&id=1FYk-JoAvZpZgar2Uam-Ji0l61_ZhVqPT)
 

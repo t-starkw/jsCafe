@@ -39,7 +39,7 @@ input ProductInput {
     addProfile(name: String!, email: String!, password: String!): Auth
     removeProfile(profileId: ID!): Profile
     addToHistory(input: [ProductInput]): Profile
-    addToMenu(product_name: String!, price: Int!): Product
+    addToMenu(product_name: String!, price: Int!, image: String): Product
     removeFromMenu(productId: ID!): Product
   }
 `;
