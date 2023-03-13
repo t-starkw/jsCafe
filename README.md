@@ -15,7 +15,8 @@
 ![TailwindCSS][tailwindcss-url]
 
 
-![Image]()
+![Image](https://drive.google.com/uc?export=view&id=1hDQd3ccP78WglCZLrumH-bfi1Att0H1R)
+![Image](https://drive.google.com/uc?export=view&id=1FYk-JoAvZpZgar2Uam-Ji0l61_ZhVqPT)
 
 
 ## Installation
@@ -44,7 +45,7 @@ Do stuff and things
 
 ## Deployed Application
 You can view the live application
-[here](link)
+[here](https://js2cafe.herokuapp.com/)
 
 ## Authors
 
